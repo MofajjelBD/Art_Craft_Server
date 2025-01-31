@@ -47,31 +47,31 @@ async function run() {
       res.send(result);
     });
 
-    // app.put("/craft/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const filter = { _id: new ObjectId(id) };
-    //   const options = { upsert: true };
-    //   const updatedCraft = req.body;
+    app.put("/craft/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updatedCraft = req.body;
 
-    //   const craft = {
-    //     $set: {
-    //       item_name: updatedCraft.item_name,
-    //       subcategory_name: updatedCraft.subcategory_name,
-    //       short_description: updatedCraft.short_description,
-    //       price: updatedCraft.price,
-    //       rating: updatedCraft.rating,
-    //       customization: updatedCraft.customization,
-    //       processing_time: updatedCraft.processing_time,
-    //       stock_status: updatedCraft.stock_status,
-    //       user_email: updatedCraft.user_email,
-    //       user_name: updatedCraft.user_name,
-    //       image: updatedCraft.image,
-    //     },
-    //   };
+      const craft = {
+        $set: {
+          item_name: updatedCraft.item_name,
+          subcategory_name: updatedCraft.subcategory_name,
+          short_description: updatedCraft.short_description,
+          price: updatedCraft.price,
+          rating: updatedCraft.rating,
+          customization: updatedCraft.customization,
+          processing_time: updatedCraft.processing_time,
+          stock_status: updatedCraft.stock_status,
+          user_email: updatedCraft.user_email,
+          user_name: updatedCraft.user_name,
+          image: updatedCraft.image,
+        },
+      };
 
-    //   const result = await craftCollection.updateOne(filter, craft, options);
-    //   res.send(result);
-    // });
+      const result = await craftCollection.updateOne(filter, craft, options);
+      res.send(result);
+    });
 
     // app.delete("/craft/:id", async (req, res) => {
     //   const id = req.params.id;
